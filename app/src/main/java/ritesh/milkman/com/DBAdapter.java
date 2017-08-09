@@ -17,67 +17,56 @@ public class DBAdapter {
 
     public DBAdapter(Context c) {
         this.c = c;
-        helper=new DBHelper(c);
+        helper = new DBHelper(c);
     }
 
     //OPEN DB
-    public void openDB()
-    {
-        try
-        {
-           db=helper.getWritableDatabase();
-        }catch (SQLException e)
-        {
+    public void openDB() {
+        try {
+            db = helper.getWritableDatabase();
+        } catch (SQLException e) {
             e.printStackTrace();
         }
     }
 
     //CLOSE
-    public void closeDB()
-    {
-        try
-        {
+    public void closeDB() {
+        try {
             helper.close();
-        }catch (SQLException e)
-        {
+        } catch (SQLException e) {
             e.printStackTrace();
         }
     }
 
     //INSERT DATA
-    public boolean add(String name)
-    {
-        try
-        {
-            ContentValues cv=new ContentValues();
+    public boolean add(String name) {
+        try {
+            ContentValues cv = new ContentValues();
             cv.put(DBHelper.KEY_FIRSTNAME, name);
 
             db.insert(DBHelper.TABLE_USER, DBHelper.KEY_ID, cv);
 
             return true;
 
-        }catch (SQLException e)
-        {
+        } catch (SQLException e) {
             e.printStackTrace();
         }
         return false;
     }
 
     //RETRIEVE DATA AND FILTER
-    public Cursor retrieve(String searchTerm)
-    {
-        String[] columns={DBHelper.KEY_ID,DBHelper.KEY_FIRSTNAME};
-        Cursor c=null;
+    public Cursor retrieve(String searchTerm) {
+        String[] columns = {DBHelper.KEY_ID, DBHelper.KEY_FIRSTNAME, DBHelper.KEY_HOBBY};
+        Cursor c = null;
 
-        if(searchTerm != null && searchTerm.length()>0)
-        {
-            String sql="SELECT * FROM "+DBHelper.TABLE_USER+" WHERE "+DBHelper.KEY_FIRSTNAME+" LIKE '%"+searchTerm+"%'";
-            c=db.rawQuery(sql,null);
+        if (searchTerm != null && searchTerm.length() > 0) {
+            String sql = "SELECT * FROM " + DBHelper.TABLE_USER + " WHERE " + DBHelper.KEY_FIRSTNAME + " LIKE '%" + searchTerm + "%'";
+            c = db.rawQuery(sql, null);
             return c;
 
         }
 
-        c=db.query(DBHelper.TABLE_USER,columns,null,null,null,null,null);
+        c = db.query(DBHelper.TABLE_USER, columns, null, null, null, null, null);
         return c;
     }
 

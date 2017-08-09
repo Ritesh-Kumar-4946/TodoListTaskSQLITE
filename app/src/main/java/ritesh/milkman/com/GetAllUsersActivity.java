@@ -75,7 +75,6 @@ public class GetAllUsersActivity extends AppCompatActivity {
         });
 
 
-
     }
 
     private void getPlanets(String searchTerm) {
@@ -83,6 +82,7 @@ public class GetAllUsersActivity extends AppCompatActivity {
 
         DBAdapter db = new DBAdapter(this);
         db.openDB();
+//        UserModel p = new UserModel();
         UserModel p = null;
         Cursor c = db.retrieve(searchTerm);
 
@@ -90,7 +90,7 @@ public class GetAllUsersActivity extends AppCompatActivity {
         while (c.moveToNext()) {
             int id = c.getInt(0);
             String name = c.getString(1);
-            String hobby = c.getString(1);
+            String hobby = c.getString(2);
 
             p = new UserModel();
             p.setId(id);
@@ -108,8 +108,8 @@ public class GetAllUsersActivity extends AppCompatActivity {
 
     private class CustomAdapter extends BaseAdapter {
 
-        private Context context;
-        private ArrayList<UserModel> userModelArrayList;
+        Context context;
+        ArrayList<UserModel> userModelArrayList;
 
         public CustomAdapter(Context context, ArrayList<UserModel> userModelArrayList) {
 
@@ -159,9 +159,9 @@ public class GetAllUsersActivity extends AppCompatActivity {
             return convertView;
         }
 
-        private class ViewHolder {
+        public class ViewHolder {
 
-            protected TextView tvname, tvcountry;
+            TextView tvname, tvcountry;
         }
 
     }
