@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ic_splash_bg"
+    android:orientation="vertical"
+    tools:context=".GetAllUsersActivity">
+
+    <TextView
+        android:id="@+id/tv_topp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/red"
+        android:gravity="center"
+        android:text="Data from SQLite"
+        android:textColor="@color/whitee"
+        android:textSize="20sp" />
+
+    <!--<EditText
+        android:id="@+id/inputSearch"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:hint="Search.."
+        android:inputType="textVisiblePassword" />-->
+
+    <android.support.v7.widget.SearchView
+        android:id="@+id/sv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:queryHint="Search.." />
+
+
+    <ListView
+        android:id="@+id/lv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp">
+
+
+    </ListView>
+
+</LinearLayout>

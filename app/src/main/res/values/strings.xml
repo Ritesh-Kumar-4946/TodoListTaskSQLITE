@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">MilKMan</string>
+    <string name="tv_banner_text">The Todo List</string>
+    <string name="tv_banner">The Smallest things make the biggest difference</string>
+    <string name="tag_text">ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz</string>
+    <string name="tittle_text">ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz 0123456789</string>
+
+</resources>
