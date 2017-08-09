@@ -20,7 +20,6 @@
         card_view:cardUseCompatPadding="true">
 
         <RelativeLayout
-            android:id="@+id/rl_banner_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp">
@@ -37,7 +36,6 @@
                 android:textSize="15sp" />
 
             <TextView
-                android:id="@+id/tv_text_banner"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tv_banner"
@@ -66,19 +64,16 @@
 
 
     <ScrollView
-        android:id="@+id/sv_main"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/iv_banner"
         android:layout_marginTop="5dp">
 
         <RelativeLayout
-            android:id="@+id/rv_main"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             <RelativeLayout
-                android:id="@+id/rl_todo_options"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:clickable="true"
@@ -96,7 +91,6 @@
                     app:cardMaxElevation="10dp">
 
                     <RelativeLayout
-                        android:id="@+id/rl_todo_tag"
                         android:layout_width="50dp"
                         android:layout_height="60dp"
                         android:layout_centerVertical="true"
@@ -108,7 +102,6 @@
                         android:paddingTop="22dp">
 
                         <ImageView
-                            android:id="@+id/iv_todo_tag"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:background="@drawable/ic_tag" />
@@ -116,7 +109,6 @@
                     </RelativeLayout>
 
                     <android.support.design.widget.TextInputLayout
-                        android:id="@+id/tin_username"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_marginLeft="50dp"
@@ -156,7 +148,6 @@
                     app:cardMaxElevation="10dp">
 
                     <RelativeLayout
-                        android:id="@+id/rl_todo_headline"
                         android:layout_width="50dp"
                         android:layout_height="60dp"
                         android:layout_centerVertical="true"
@@ -168,7 +159,6 @@
                         android:paddingTop="25dp">
 
                         <ImageView
-                            android:id="@+id/iv_todo_headline"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:background="@drawable/ic_heading" />
@@ -176,7 +166,6 @@
                     </RelativeLayout>
 
                     <android.support.design.widget.TextInputLayout
-                        android:id="@+id/tin_todo_headline"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_marginEnd="10dp"
@@ -224,7 +213,6 @@
                     card_view:cardUseCompatPadding="true">
 
                     <TextView
-                        android:id="@+id/tv_login"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center"
@@ -244,7 +232,6 @@
 
 
                 <RelativeLayout
-                    android:id="@+id/rl_forgetpassword"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/cv_save"

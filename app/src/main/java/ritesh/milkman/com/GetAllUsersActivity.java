@@ -78,7 +78,33 @@ public class GetAllUsersActivity extends AppCompatActivity {
 
     }
 
+    private void getPlanets(String searchTerm) {
+        userModelArrayList.clear();
 
+        DBAdapter db = new DBAdapter(this);
+        db.openDB();
+        UserModel p = null;
+        Cursor c = db.retrieve(searchTerm);
+
+
+        while (c.moveToNext()) {
+            int id = c.getInt(0);
+            String name = c.getString(1);
+            String hobby = c.getString(1);
+
+            p = new UserModel();
+            p.setId(id);
+            p.setName(name);
+            p.setHobby(hobby);
+
+            userModelArrayList.add(p);
+        }
+
+        db.closeDB();
+
+        listView.setAdapter(customAdapter);
+
+    }
 
     private class CustomAdapter extends BaseAdapter {
 
@@ -137,33 +163,6 @@ public class GetAllUsersActivity extends AppCompatActivity {
 
             protected TextView tvname, tvcountry;
         }
-
-    }
-
-
-    private void getPlanets(String searchTerm) {
-        userModelArrayList.clear();
-
-        DBAdapter db = new DBAdapter(this);
-        db.openDB();
-        UserModel p = null;
-        Cursor c = db.retrieve(searchTerm);
-        while (c.moveToNext()) {
-            int id = c.getInt(0);
-            String name = c.getString(1);
-            String hobby = c.getString(2);
-
-            p = new UserModel();
-            p.setId(id);
-            p.setName(name);
-            p.setHobby(hobby);
-
-            userModelArrayList.add(p);
-        }
-
-        db.closeDB();
-
-        listView.setAdapter(customAdapter);
 
     }
 
